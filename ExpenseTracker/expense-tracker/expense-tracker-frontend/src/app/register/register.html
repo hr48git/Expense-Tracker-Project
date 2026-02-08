@@ -1,0 +1,68 @@
+<div class="container-fluid d-flex justify-content-center align-items-center vh-100">
+  <div class="card shadow p-4" style="width: 380px;">
+
+    <!-- Success Alert -->
+    <div
+      *ngIf="successMessage"
+      class="alert alert-success alert-dismissible fade show text-center"
+      role="alert"
+    >
+      {{ successMessage }}
+      <button type="button" class="btn-close" (click)="successMessage = ''"></button>
+    </div>
+
+    <!-- Error Alert -->
+    <div
+      *ngIf="message"
+      class="alert alert-danger alert-dismissible fade show text-center"
+      role="alert"
+    >
+      {{ message }}
+      <button type="button" class="btn-close" (click)="message = ''"></button>
+    </div>
+
+    <h3 class="text-center mb-3">Register</h3>
+
+    <div class="mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Full Name"
+        [(ngModel)]="name"
+      />
+    </div>
+
+    <div class="mb-3">
+      <input
+        type="email"
+        class="form-control"
+        placeholder="Email"
+        [(ngModel)]="email"
+      />
+    </div>
+
+    <div class="mb-3">
+      <input
+        type="password"
+        class="form-control"
+        placeholder="Password"
+        [(ngModel)]="password"
+      />
+    </div>
+
+    <button
+      type="button"
+      class="btn btn-success w-100"
+      (click)="register()"
+      [disabled]="!name || !email || !password"
+    >
+      Register
+    </button>
+
+    <p class="text-center mt-3 mb-0">
+      Already have an account?
+      <a routerLink="/login">Login</a>
+    </p>
+
+  </div>
+</div>

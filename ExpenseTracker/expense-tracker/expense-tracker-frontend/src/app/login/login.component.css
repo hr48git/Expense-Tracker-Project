@@ -1,0 +1,14 @@
+.app-title {
+    font-size: 2.6rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    background: linear-gradient(90deg, #0d6efd, #20c997);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .app-subtitle {
+    font-size: 0.95rem;
+    color: #6c757d;
+  }
+  

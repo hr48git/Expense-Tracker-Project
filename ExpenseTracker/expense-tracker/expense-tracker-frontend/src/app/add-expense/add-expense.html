@@ -1,0 +1,71 @@
+<div class="container mt-4" style="max-width: 420px;">
+  <h2 class="text-center mb-4">Add Expense</h2>
+
+  <!-- Expense Type -->
+  <div class="mb-3">
+    <label class="form-label">Expense Type</label>
+    <select class="form-select" [(ngModel)]="expenseType">
+      <option [ngValue]="null" disabled>Select expense type</option>
+      <option value="PERSONAL">Personal</option>
+      <option value="ORGANIZATIONAL">Organizational</option>
+    </select>
+  </div>
+
+  <!-- Category -->
+  <div class="mb-3">
+    <label class="form-label">Category</label>
+    <select class="form-select" [(ngModel)]="categoryId">
+      <option [ngValue]="null" disabled>Select category</option>
+      <option [ngValue]="1">Food</option>
+      <option [ngValue]="2">Travel</option>
+      <option [ngValue]="3">Rent</option>
+      <option [ngValue]="4">Groceries</option>
+      <option [ngValue]="5">Office Supplies</option>
+      <option [ngValue]="6">Client Expenses</option>
+      <option [ngValue]="7">Entertainment</option>
+      <option [ngValue]="8">EMI</option>
+      <option [ngValue]="9">Others</option>
+    </select>
+  </div>
+
+  <!-- Amount -->
+  <div class="mb-3">
+    <label class="form-label">Amount</label>
+    <input
+      type="number"
+      class="form-control"
+      placeholder="Enter amount"
+      [(ngModel)]="amount"
+    />
+  </div>
+
+  <!-- Description -->
+  <div class="mb-3">
+    <label class="form-label">Description</label>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Short note about expense"
+      [(ngModel)]="title"
+    />
+  </div>
+
+  <!-- Date -->
+  <div class="mb-3">
+    <label class="form-label">Date</label>
+    <input type="date" class="form-control" [(ngModel)]="expenseDate" />
+  </div>
+
+  <button
+    class="btn btn-primary w-100"
+    (click)="addExpense()"
+    [disabled]="!expenseType || !categoryId || !amount"
+  >
+    Add Expense
+  </button>
+
+  <div *ngIf="message" class="alert alert-danger text-center mt-3">
+  {{ message }}
+</div>
+
+</div>
